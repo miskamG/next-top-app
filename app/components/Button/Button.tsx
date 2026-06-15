@@ -1,10 +1,18 @@
-import styles from './Button.module.css';
-import { ButtonProps } from './Button.props';
-import ArrowIcon from './arrow.svg';
-import cn from 'classnames';
+'use client'
 
-export const Button = ({ appearance, arrow = 'none', children, className, ...props }: ButtonProps) => {
-	return (
+import styles from './Button.module.css'
+import { ButtonProps } from './Button.props'
+import ArrowIcon from './arrow.svg'
+import cn from 'classnames'
+
+export const Button = ({
+  appearance,
+  arrow = 'none',
+  children,
+  className,
+  ...props
+}: ButtonProps) => {
+  return (
     <button
       className={cn(styles.button, className, {
         [styles.primary]: appearance == 'primary',
@@ -24,4 +32,4 @@ export const Button = ({ appearance, arrow = 'none', children, className, ...pro
       )}
     </button>
   )
-};
+}
