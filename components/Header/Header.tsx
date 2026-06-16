@@ -1,6 +1,5 @@
 import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
-import Logo from '../../app/(site)/logo.svg';
 import cn from 'classnames';
 // import { ButtonIcon } from '../../components/ButtonIcon/ButtonIcon';
 // import { motion, useReducedMotion } from 'framer-motion';
@@ -32,10 +31,10 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 	// };
 
 	return (
-		<header className={cn(className, styles.header)} {...props}>
-			<Logo />
-			{/* <ButtonIcon appearance='white' icon='menu' onClick={() => setIsOpened(true)} /> */}
-			{/* <motion.div
+    <header className={cn(className, styles.header)} {...props}>
+      <img src="/logo.svg" alt="" />
+      {/* <ButtonIcon appearance='white' icon='menu' onClick={() => setIsOpened(true)} /> */}
+      {/* <motion.div
 				className={styles.mobileMenu}
 				variants={variants}
 				initial={'closed'}
@@ -44,11 +43,9 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 				<Sidebar />
 				<ButtonIcon className={styles.menuClose} appearance='white' icon='close' onClick={() => setIsOpened(false)} />
       </motion.div> */}
-      <div
-				className={styles.mobileMenu}
-			>
-				<Sidebar />
-			</div>
-		</header>
-	);
+      <div className={styles.mobileMenu}>
+        <Sidebar />
+      </div>
+    </header>
+  )
 };
